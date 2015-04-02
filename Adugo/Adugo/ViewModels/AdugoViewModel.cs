@@ -1,38 +1,49 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Adugo.Models;
 
 namespace Adugo.ViewModels
 {
     class AdugoViewModel : INotifyPropertyChanged
     {
-
-
         public AdugoViewModel()
         {
-            color = "red";
-
+            ButtonsData = new List<PointDataModel>();
+            LoadExamplePointDataModel();
         }
 
-        private string _color;
+       
 
-        public string color
+        private IList<PointDataModel> _ButtonsData;
+
+        public IList<PointDataModel> ButtonsData
         {
-            get
-            {
-                return _color;
-            }
+            get { return _ButtonsData; }
             set
             {
-                if (value != _color)
+                if (!Equals(value, _ButtonsData))
                 {
-                    _color = value;
+                    _ButtonsData = value;
                     OnPropertyChanged();
                 }
             }
         }
 
+        
 
+        public static PointDataModel SelectedItem;
+       
 
+        private void LoadExamplePointDataModel()
+        {
+            ButtonsData.Add(new PointDataModel(){Content = "1",Left = 50,Top = 0,Side = 30});
+            ButtonsData.Add(new PointDataModel() { Content = "2", Left = -50,Top = -30,Side = 30});
+            ButtonsData.Add(new PointDataModel() { Content = "5", Left = -100, Top = 60, Side = 30 });
+            ButtonsData.Add(new PointDataModel() { Content = "4", Left = -50, Top = 0, Side = 30 });
+
+        }
         
 
         #region PropertyChanged

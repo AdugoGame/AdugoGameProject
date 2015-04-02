@@ -105,6 +105,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\DelegateCommand.cs" />
+    <Compile Include="Models\PointDataModel.cs" />
     <Compile Include="ViewModels\AdugoViewModel.cs" />
     <Compile Include="Views\AdugoMainWindow.xaml.cs">
       <DependentUpon>AdugoMainWindow.xaml</DependentUpon>
