@@ -10,7 +10,7 @@ namespace Adugo
     {
 
         private AdugoViewModel adugoViewModel;
-        public MainWindow()
+        public MainWindow(bool siEnable)
         {
             adugoViewModel = new AdugoViewModel();
             DataContext = adugoViewModel;
