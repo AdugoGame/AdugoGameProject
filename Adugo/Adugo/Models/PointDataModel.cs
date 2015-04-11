@@ -17,7 +17,7 @@ namespace Adugo.Models
 
         public int Top { get; set; }
 
-        public int Side { get; set; }
+        public int Size { get; set; }
 
         public DelegateCommand SelectItemCommand { get; set; }
 

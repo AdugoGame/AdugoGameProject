@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Adugo.ViewModels;
 
 namespace Adugo
@@ -16,6 +17,13 @@ namespace Adugo
             DataContext = adugoViewModel;
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("wyswietlam 1");
+        }
+
+
 
         
     }
