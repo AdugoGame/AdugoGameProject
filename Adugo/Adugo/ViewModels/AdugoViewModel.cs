@@ -83,10 +83,10 @@ namespace Adugo.ViewModels
         private void LoadExamplePointDataModel()
         {
             const int PionekSize = 70;
-            const int LeftStart = -340;
-            const int LeftZmiana = 95;
+            const int LeftStart = -342;
+            const int LeftZmiana = 99;
             const int TopStart = 10;
-            int TopShift = 0;
+            int TopShift = -2;
             
             //for (int j = 0; j < 5; j++)
             //{
