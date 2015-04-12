@@ -33,6 +33,8 @@ namespace Adugo.Models
 
         public int Size { get; set; }
 
+        public int ValueForMatrix { get; set; }
+
         public DelegateCommand SelectItemCommand { get; set; }
 
 
