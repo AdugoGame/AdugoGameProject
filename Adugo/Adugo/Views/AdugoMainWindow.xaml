@@ -9,7 +9,6 @@
     <Grid>
 
 
-
         <Image HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="480" Margin="10,21,0,0" Source="../Media/map.png"/>
      
 
@@ -17,8 +16,12 @@
             <ItemsControl.ItemTemplate>
 
                 <DataTemplate>
-                    <Button Width="{Binding Size}" Height="{Binding Size}"
-                            Content="{Binding ContentString}" Command="{Binding SelectItemCommand}">
+                    <Button Width="{Binding Size}" 
+                            Height="{Binding Size}"
+                            Content="{Binding ContentString}" 
+                            Command="{Binding SelectItemCommand}"
+                            Visibility="Visible"
+                            BorderBrush="{x:Null}">
                         <Button.Background>
                             
                             <ImageBrush ImageSource="{Binding Background}"/>
@@ -33,17 +36,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <!-- TESTOWY WYGLĄD ŻETONÓW I MAPY
-        <Image HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="480" Margin="10,21,0,0" Source="../Media/map.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="218,205,0,0" Source="../Media/jaguar.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="317,206,0,0" Source="../Media/doge.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="218,107,0,0" Source="../Media/doge.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="117,506,0,0" Source="../Media/doge.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="317,107,0,0" Source="../Media/doge.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="416,10,0,0" Source="../Media/doge.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="416,205,0,0" Source="../Media/doge.png"/>
-        <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Margin="218,10,0,0" Source="../Media/doge.png"/>
--->
+       
         <!-- 
         
         <ItemsControl x:Name="itemsControl" ItemsSource="{Binding Tiles}">
