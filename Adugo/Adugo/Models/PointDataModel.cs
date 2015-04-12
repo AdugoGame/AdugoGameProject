@@ -11,7 +11,21 @@ namespace Adugo.Models
 {
     internal class PointDataModel:INotifyPropertyChanged
     {
-        public string Content { get; set; }
+        public string ContentString { get; set; }
+
+        private int _Id;
+
+        public int Id
+        {
+            get { return _Id; }
+            set
+            {
+                
+                    _Id = value;
+                    ContentString = value.ToString();
+                
+            }
+        }
 
         public int Left { get; set; }
 

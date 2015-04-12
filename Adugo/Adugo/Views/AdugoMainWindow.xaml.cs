@@ -16,15 +16,11 @@ namespace Adugo
             adugoViewModel = new AdugoViewModel();
             DataContext = adugoViewModel;
             InitializeComponent();
+            //this.WindowStyle = WindowStyle.None; //to jest fajne
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("wyswietlam 1");
-        }
-
-
-
+        
         
     }
 }
