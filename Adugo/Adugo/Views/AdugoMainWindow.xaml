@@ -21,7 +21,7 @@
                             Content="{Binding ContentString}" Command="{Binding SelectItemCommand}">
                         <Button.Background>
                             
-                            <ImageBrush ImageSource="/Adugo;component/Media/doge.png"/>
+                            <ImageBrush ImageSource="{Binding Background}"/>
                             
                         </Button.Background>
 

@@ -9,7 +9,7 @@ using Adugo.ViewModels;
 
 namespace Adugo.Models
 {
-    internal class PointDataModel:INotifyPropertyChanged
+    public class PointDataModel:INotifyPropertyChanged
     {
         public string ContentString { get; set; }
 
@@ -24,6 +24,21 @@ namespace Adugo.Models
                     _Id = value;
                     ContentString = value.ToString();
                 
+            }
+        }
+
+        public string _Background;
+
+        public string Background
+        {
+            get { return _Background; }
+            set
+            {
+                if (value != _Background)
+                {
+                    _Background = value;
+                    OnPropertyChanged();
+                }
             }
         }
 

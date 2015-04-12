@@ -28,5 +28,132 @@ namespace Adugo.Models
         public bool Down { get; set; }
         public bool RightDown { get; set; }
 
+        public static AbilityToMove GetAbilityToMove(int Id)
+        {
+            AbilityToMove ability = new AbilityToMove();
+
+            if (Id < 25)
+            {
+                if (Id % 2 == 1)
+                {
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                    ability.LeftUp = false;
+                    ability.RightUp = false;
+                }
+
+                if (Id / 5 == 0)
+                {
+                    ability.Up = false;
+                    ability.LeftUp = false;
+                    ability.RightUp = false;
+                }
+
+                if (Id % 5 == 0)
+                {
+                    ability.Left = false;
+                    ability.LeftUp = false;
+                    ability.LeftDown = false;
+                }
+
+                if (Id % 5 == 4)
+                {
+                    ability.Right = false;
+                    ability.RightDown = false;
+                    ability.RightUp = false;
+                }
+
+                if (Id / 5 == 4 && Id != 22)
+                {
+                    ability.Down = false;
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                }
+            }
+
+            else
+            {
+                if (Id == 25 || Id == 29 || Id == 31 || Id == 33)
+                {
+                    ability.Down = false;
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                    ability.Up = false;
+                    ability.LeftUp = false;
+                    ability.RightUp = false;
+                    ability.Left = false;
+                    ability.Right = false;
+                }
+                if (Id == 26)
+                {
+                    ability.Down = false;
+                    ability.RightDown = false;
+                    ability.Up = false;
+                    ability.LeftUp = false;
+                    ability.Left = false;
+
+                }
+
+                if (Id == 27)
+                {
+                    ability.Down = false;
+                    ability.Up = false;
+                    ability.Left = false;
+                    ability.Right = false;
+                }
+
+                if (Id == 28)
+                {
+                    ability.Down = false;
+                    ability.LeftDown = false;
+                    ability.Up = false;
+                    ability.RightUp = false;
+                    ability.Right = false;
+                }
+
+                if (Id == 30)
+                {
+                    ability.Down = false;
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                    ability.Up = false;
+                    ability.LeftUp = false;
+                    ability.Left = false;
+
+                }
+
+                if (Id == 32)
+                {
+                    ability.Down = false;
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                    ability.LeftUp = false;
+                    ability.RightUp = false;
+
+                }
+
+                if (Id == 34)
+                {
+                    ability.Down = false;
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                    ability.Up = false;
+                    ability.RightUp = false;
+                    ability.Right = false;
+                }
+
+
+            }
+
+
+
+            return ability;
+        }
+
+        public static AbilityToMove GetAbilityToMove(PointDataModel pointDataModel)
+        {
+            return GetAbilityToMove(pointDataModel.Id);
+        }
+
     }
 }
