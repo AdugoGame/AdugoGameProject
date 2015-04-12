@@ -38,19 +38,26 @@ namespace Adugo.ViewModels
 
         private void LoadExamplePointDataModel()
         {
-            int PionekSize = 70;
-            int LeftStart = -340;
-            int LeftZmiana = 95;
-            int TopStart = 10;
-
+            const int PionekSize = 70;
+            const int LeftStart = -340;
+            const int LeftZmiana = 95;
+            const int TopStart = 10;
+            int TopShift = 0;
+            
             for (int j = 0; j < 5; j++)
             {
+
                 for (int i = 0; i < 7; i++)
                 {
-                    ButtonsData.Add(new PointDataModel() { Content = (i*j).ToString(), Left = j * LeftZmiana + LeftStart, Top = i * 3 * TopStart, Size = PionekSize });
-                }  
+                    ButtonsData.Add(new PointDataModel() { Content = (i*5+j).ToString(), Left = j * LeftZmiana + LeftStart, Top = i * 3 * TopStart - TopShift, Size = PionekSize });
+                }
+
+                TopShift += 49*TopStart;
+
             }
 
+
+           
             /*
             ButtonsData.Add(new PointDataModel() { Content = "1", Left = -340, Top = TopStart, Size = PionekSize });
             ButtonsData.Add(new PointDataModel() { Content = "2", Left = -340, Top = 3 * TopStart, Size = PionekSize });
