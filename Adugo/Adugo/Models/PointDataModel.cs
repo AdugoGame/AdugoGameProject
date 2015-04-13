@@ -42,6 +42,23 @@ namespace Adugo.Models
             }
         }
 
+
+        public string _Visibility;
+
+        public string Visibility
+        {
+            get { return _Visibility; }
+            set
+            {
+                if (value != _Visibility)
+                {
+                    _Visibility = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
         public int Left { get; set; }
 
         public int Top { get; set; }
