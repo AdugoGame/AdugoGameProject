@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
 using Adugo.Models;
 
 namespace Adugo.ViewModels
@@ -134,6 +135,32 @@ namespace Adugo.ViewModels
 
 
             ButtonsData[12].Background = ButtonBackgrounds.Jaguar;
+
+            for (int i = 0; i <= 34; i++)
+            {
+               
+                if(i==25)
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+                }
+                else if (i == 29)
+                {
+                    ButtonsData[i].Visibility=ButtonVisibility.Hidden;
+                }
+                else if (i==31)
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+                }
+                else if (i==33)
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+                }
+                else
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Visible;
+                }
+            }
+
 
         }
         

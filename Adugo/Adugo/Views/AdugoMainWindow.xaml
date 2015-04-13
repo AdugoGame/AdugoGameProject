@@ -20,7 +20,7 @@
                             Height="{Binding Size}"
                             Content="{Binding ContentString}" 
                             Command="{Binding SelectItemCommand}"
-                            Visibility="Visible"
+                            Visibility="{Binding Visibility }"
                             BorderBrush="{x:Null}">
                         <Button.Background>
                             
