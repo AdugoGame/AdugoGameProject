@@ -155,5 +155,53 @@ namespace Adugo.Models
             return GetAbilityToMove(pointDataModel.Id);
         }
 
+        public static bool TestAbilityToMove(PointDataModel IdFrom, PointDataModel IdTo)
+        {
+            AbilityToMove AbSource = GetAbilityToMove(IdFrom);
+            if (IdFrom.Background == ButtonBackgrounds.DogeChoosen)
+            {
+                int deltaID = IdFrom.Id - IdTo.Id;
+                switch (deltaID)
+                {
+                    case -6:
+                        if (AbSource.LeftUp)
+                            return true;
+                        break;
+                    case -5:
+                        if (AbSource.Up)
+                            return true;
+                        break;
+                    case -4:
+                        if (AbSource.RightUp)
+                            return true;
+                        break;
+                    case -1:
+                        if (AbSource.Left)
+                            return true;
+                        break;
+                    case 1:
+                        if (AbSource.Right)
+                            return true;
+                        break;
+                    case 4:
+                        if (AbSource.LeftUp)
+                            return true;
+                        break;
+                    case 5:
+                        if (AbSource.LeftUp)
+                            return true;
+                        break;
+                    case 6:
+                        if (AbSource.LeftUp)
+                            return true;
+                        break;
+                    default:
+                        return false;
+                }
+
+            }
+
+            return false;
+        }
     }
 }
