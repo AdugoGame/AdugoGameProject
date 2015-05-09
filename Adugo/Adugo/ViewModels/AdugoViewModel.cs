@@ -18,10 +18,7 @@ namespace Adugo.ViewModels
             LoadExamplePointDataModel();
         }
 
-       
-
         private static PointDataModel[] _ButtonsData;
-
         public PointDataModel[] ButtonsData
         {
             get { return _ButtonsData; }
@@ -38,7 +35,6 @@ namespace Adugo.ViewModels
         private static GameControl Game;
 
         private static PointDataModel _SelectedItem;
-        
         public static PointDataModel SelectedItem
         {
             get { return _SelectedItem; }
@@ -117,41 +113,11 @@ namespace Adugo.ViewModels
                                 _SelectedItem = null;
                                 Game.NextTurn();
                             }
-                            
-                        }
-
-                    }
-                }
-
-                /*
-                if (value != _SelectedItem)
-                {
-                    if (_SelectedItem == null)
-                    {
-                        if (value.Background != null)
-                        {
-                            _SelectedItem = value;
-                            if (_SelectedItem.Background == ButtonBackgrounds.Doge)
-                                _SelectedItem.Background = ButtonBackgrounds.DogeChoosen;
-                            else if (_SelectedItem.Background == ButtonBackgrounds.Jaguar)
-                                _SelectedItem.Background = ButtonBackgrounds.JaguarChoosen;
                         }
                     }
                 }
-                else
-                {
-                    if (_SelectedItem.Background == ButtonBackgrounds.DogeChoosen)
-                        _SelectedItem.Background = ButtonBackgrounds.Doge;
-                    else if (_SelectedItem.Background == ButtonBackgrounds.JaguarChoosen)
-                        _SelectedItem.Background = ButtonBackgrounds.Jaguar;
-                    _SelectedItem = null;
-                }
-                 * * */
             } 
         }
-
-
-        
 
         private void SetValueForMatrix(int Id, int value)
         {
