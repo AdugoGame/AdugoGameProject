@@ -60,10 +60,7 @@ namespace Adugo.ViewModels
                     {
                         if (_SelectedItem.Background == ButtonBackgrounds.JaguarChoosen)
                         {
-                            //Przesuń selected na value
-                            //MessageBox.Show("Akcja: Przesuń jaguara");
-                            //AbilityToMove.GetAbilityToMove(_SelectedItem.Id)
-                            //if (AbilityToMove.TestAbilityToMove(_SelectedItem, value))
+                            if (AbilityToMove.TestAbilityToMove(_SelectedItem, value))
                             {
                                 _SelectedItem.Background = null;
                                 value.Background = ButtonBackgrounds.Jaguar;
@@ -90,7 +87,6 @@ namespace Adugo.ViewModels
                     {
                         if (_SelectedItem.Background == ButtonBackgrounds.DogeChoosen)
                         {
-                            //MessageBox.Show("Akcja: Przesuń psa");
                             if (AbilityToMove.TestAbilityToMove(_SelectedItem, value))
                             {
                                 _SelectedItem.Background = null;
