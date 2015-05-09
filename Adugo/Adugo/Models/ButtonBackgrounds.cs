@@ -18,7 +18,15 @@ namespace Adugo.Models
             get { return "/Adugo;component/Media/jaguar.png"; }
         }
 
+        public static string DogeChoosen
+        {
+            get { return "/Adugo;component/Media/doge_y.png"; }
+        }
 
+        public static string JaguarChoosen
+        {
+            get { return "/Adugo;component/Media/jaguar_y.png"; }
+        }
 
     }
 }

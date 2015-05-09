@@ -99,6 +99,7 @@
     <Compile Include="Models\AbilityToMove.cs" />
     <Compile Include="Models\ButtonVisibility.cs" />
     <Compile Include="Models\ButtonBackgrounds.cs" />
+    <Compile Include="Models\GameControl.cs" />
     <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
@@ -189,6 +190,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Media\doge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\jaguar_y.png" />
+    <Resource Include="Media\doge_y.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
