@@ -93,15 +93,15 @@ namespace Adugo.Models
                     ability.Left = false;
 
                 }
-
+                
                 if (Id == 27)
                 {
-                    ability.Down = false;
-                    ability.Up = false;
-                    ability.Left = false;
-                    ability.Right = false;
+                    ability.LeftDown = false;
+                    ability.RightDown = false;
+                    ability.LeftUp = false;
+                    ability.RightUp = false;
                 }
-
+                
                 if (Id == 28)
                 {
                     ability.Down = false;
@@ -194,6 +194,11 @@ namespace Adugo.Models
                             return true;
                         break;
                     default:
+                        if ((IdFrom.Id == 30 & IdTo.Id == 32) ||
+                            (IdFrom.Id == 32 & IdTo.Id == 30) ||
+                            (IdFrom.Id == 32 & IdTo.Id == 34) ||
+                            (IdFrom.Id == 34 & IdTo.Id == 32))
+                            return true;
                         break;
                 }
             return false;
