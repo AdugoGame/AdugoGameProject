@@ -67,6 +67,29 @@ namespace Adugo.ViewModels
                                 _SelectedItem = null;
                                 Game.NextTurn();
                             }
+                            else
+                            {
+                                int id = AbilityToMove.TestAbilityToKill(_SelectedItem, value);
+                                if (id != -1)
+                                {
+                                    if (_ButtonsData[id].Background == ButtonBackgrounds.Doge)
+                                    {
+                                        if (AbilityToMove.TestAbilityToMove(_SelectedItem, _ButtonsData[id]))
+                                        {
+                                            if (AbilityToMove.TestAbilityToMove(_ButtonsData[id], value))
+                                            {
+                                                _ButtonsData[id].Background = null;
+                                                value.Background = ButtonBackgrounds.Jaguar;
+                                                _SelectedItem.Background = null;
+                                                _SelectedItem = null;
+                                                Game.DogeCount--;
+                                                Game.NextTurn();
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
 
                         }
                     }
@@ -94,6 +117,7 @@ namespace Adugo.ViewModels
                                 _SelectedItem = null;
                                 Game.NextTurn();
                             }
+                            
                         }
 
                     }

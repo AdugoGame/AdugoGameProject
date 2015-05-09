@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace Adugo.Models
 {
@@ -202,6 +203,36 @@ namespace Adugo.Models
                         break;
                 }
             return false;
+        }
+
+        public static int TestAbilityToKill(PointDataModel IdFrom, PointDataModel IdTo)
+        {
+            int delta = IdFrom.Id - IdTo.Id;
+            switch (delta)
+            {
+                case 12:
+                    return IdFrom.Id - 6;
+                case 10:
+                    return IdFrom.Id - 5;
+                case 8:
+                    return IdFrom.Id - 4;
+                case 2:
+                    return IdFrom.Id - 1;
+                case -2:
+                    return IdFrom.Id + 1;
+                case -8:
+                    return IdFrom.Id + 4;
+                case -10:
+                    return IdFrom.Id + 5;
+                case -12:
+                    return IdFrom.Id + 6;
+                default:
+                    if ((IdFrom.Id == 34 && IdTo.Id == 30) || (IdFrom.Id == 30 && IdTo.Id == 34))
+                    {
+                        return 32;
+                    } else
+                        return -1;
+            }
         }
     }
 }
