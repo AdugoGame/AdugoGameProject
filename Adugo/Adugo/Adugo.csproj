@@ -74,6 +74,9 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Lingua">
+      <HintPath>..\packages\Lingua.dll.1.0.1\lib\net40\Lingua.dll</HintPath>
+    </Reference>
     <Reference Include="Prolog">
       <HintPath>..\packages\Prolog.NET.1.0.2\lib\net40\Prolog.dll</HintPath>
     </Reference>
@@ -99,6 +102,7 @@
     <Compile Include="Models\AbilityToMove.cs" />
     <Compile Include="Models\ButtonVisibility.cs" />
     <Compile Include="Models\ButtonBackgrounds.cs" />
+    <Compile Include="Models\PrologModel.cs" />
     <Compile Include="Views\MenuWindow.xaml.cs">
       <DependentUpon>MenuWindow.xaml</DependentUpon>
     </Compile>
@@ -141,6 +145,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Prolog\adugo.prolog" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
