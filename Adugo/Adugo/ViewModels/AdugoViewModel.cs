@@ -14,6 +14,7 @@ namespace Adugo.ViewModels
         public AdugoViewModel()
         {
             ButtonsData = new PointDataModel[35];
+            Game = new GameControl();
             LoadExamplePointDataModel();
         }
 
@@ -34,6 +35,7 @@ namespace Adugo.ViewModels
             }
         }
 
+        private static GameControl Game;
 
         private static PointDataModel _SelectedItem;
         
@@ -42,12 +44,82 @@ namespace Adugo.ViewModels
             get { return _SelectedItem; }
             set
             {
+                if (Game.Turn == GameControl.PlayerRound.Jaguar)
+                {
+                    if (value.Background == ButtonBackgrounds.Jaguar)
+                    {
+                        _SelectedItem = value;
+                        _SelectedItem.Background = ButtonBackgrounds.JaguarChoosen;
+                    } 
+                    else if (value.Background == ButtonBackgrounds.JaguarChoosen)
+                    {
+                        _SelectedItem.Background = ButtonBackgrounds.Jaguar;
+                        _SelectedItem = null;
+                    }
+                    else if (value.Background == null && _SelectedItem != null)
+                    {
+                        if (_SelectedItem.Background == ButtonBackgrounds.JaguarChoosen)
+                        {
+                            //Przesuń selected na value
+                            //MessageBox.Show("Akcja: Przesuń jaguara");
+                            _SelectedItem.Background = null;
+                            value.Background = ButtonBackgrounds.Jaguar;
+                            _SelectedItem = null;
+                            Game.NextTurn();
+                        }
+                    }
+                }
+                else if (Game.Turn == GameControl.PlayerRound.Doge)
+                {
+                    if (value.Background == ButtonBackgrounds.Doge && SelectedItem == null)
+                    {
+                        _SelectedItem = value;
+                        _SelectedItem.Background = ButtonBackgrounds.DogeChoosen;
+                    }
+                    else if (value.Background == ButtonBackgrounds.DogeChoosen)
+                    {
+                        _SelectedItem.Background = ButtonBackgrounds.Doge;
+                        _SelectedItem = null;
+                    }
+                    else if (value.Background == null && _SelectedItem != null)
+                    {
+                        if (_SelectedItem.Background == ButtonBackgrounds.DogeChoosen)
+                        {
+                            //MessageBox.Show("Akcja: Przesuń psa");
+                            _SelectedItem.Background = null;
+                            value.Background = ButtonBackgrounds.Doge;
+                            _SelectedItem = null;
+                            Game.NextTurn();
+                        }
+
+                    }
+                }
+
+                /*
                 if (value != _SelectedItem)
                 {
-                    _SelectedItem = value;
-                    MessageBox.Show("Zmiana");
+                    if (_SelectedItem == null)
+                    {
+                        if (value.Background != null)
+                        {
+                            _SelectedItem = value;
+                            if (_SelectedItem.Background == ButtonBackgrounds.Doge)
+                                _SelectedItem.Background = ButtonBackgrounds.DogeChoosen;
+                            else if (_SelectedItem.Background == ButtonBackgrounds.Jaguar)
+                                _SelectedItem.Background = ButtonBackgrounds.JaguarChoosen;
+                        }
+                    }
                 }
-            }
+                else
+                {
+                    if (_SelectedItem.Background == ButtonBackgrounds.DogeChoosen)
+                        _SelectedItem.Background = ButtonBackgrounds.Doge;
+                    else if (_SelectedItem.Background == ButtonBackgrounds.JaguarChoosen)
+                        _SelectedItem.Background = ButtonBackgrounds.Jaguar;
+                    _SelectedItem = null;
+                }
+                 * * */
+            } 
         }
 
 
