@@ -31,6 +31,36 @@ namespace Adugo.ViewModels
                 }
             }
         }
+        public int RoundNumber
+        {
+            get { return Game.Moves; }
+            set
+            {
+                if (!Equals(value, Game.Moves))
+                {
+                    Game.Moves = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public string _RoundBackground;
+
+        public string RoundBackground
+        {
+            get
+            {
+                if (Game.Turn == GameControl.PlayerRound.Doge)
+                {
+                    return ButtonBackgrounds.Doge;
+                }
+                else
+                {
+                    return ButtonBackgrounds.Jaguar;
+                }
+            }
+
+        }
 
         private static GameControl Game;
 
@@ -62,6 +92,7 @@ namespace Adugo.ViewModels
                                 value.Background = ButtonBackgrounds.Jaguar;
                                 _SelectedItem = null;
                                 Game.NextTurn();
+                                
                             }
                             else
                             {

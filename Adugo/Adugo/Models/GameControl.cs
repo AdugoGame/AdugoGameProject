@@ -30,7 +30,6 @@ namespace Adugo.Models
             if (Turn == PlayerRound.Jaguar)
             {
                 Turn = PlayerRound.Doge;
-                
                 MessageBox.Show("Info: Tura psa");
             }
             else
