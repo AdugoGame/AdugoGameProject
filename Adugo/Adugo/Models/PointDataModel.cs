@@ -65,7 +65,33 @@ namespace Adugo.Models
 
         public int Size { get; set; }
 
-        public int ValueForMatrix { get; set; }
+        private int _ValueForMatrix ;
+
+        public int ValueForMatrix   // Do wdrozenia
+        {
+            get { return _ValueForMatrix; }
+            set
+            {
+                if (value != _ValueForMatrix)
+                {
+                    _ValueForMatrix = value;
+                    if (_ValueForMatrix == 0)
+                    {
+                        Visibility = ButtonVisibility.Hidden;
+                    }
+                    else if (_ValueForMatrix == 1)
+                    {
+                        Visibility = ButtonVisibility.Visible;
+                        Background = ButtonBackgrounds.Doge;
+                    }
+                    else if (_ValueForMatrix == 2)
+                    {
+                        Visibility = ButtonVisibility.Visible;
+                        Background = ButtonBackgrounds.Jaguar;
+                    }
+                }
+            }
+        } // do settera dolozyc zmiane obrazka w Background
 
         public DelegateCommand SelectItemCommand { get; set; }
 

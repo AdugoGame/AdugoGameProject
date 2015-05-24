@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -227,37 +228,60 @@ namespace Adugo.ViewModels
 
             for (int i = 0; i < 15; i++)
             {
-                ButtonsData[i].Background = ButtonBackgrounds.Doge;
+                //ButtonsData[i].Background = ButtonBackgrounds.Doge;
+                ButtonsData[i].ValueForMatrix = 1;
             }
 
 
-            ButtonsData[12].Background = ButtonBackgrounds.Jaguar;
+            //ButtonsData[12].Background = ButtonBackgrounds.Jaguar;
+            ButtonsData[12].ValueForMatrix = 2;
 
-            for (int i = 0; i <= 34; i++)
-            {
+            ButtonsData[25].ValueForMatrix = 0;
+
+            ButtonsData[29].ValueForMatrix = 0;
+
+            ButtonsData[31].ValueForMatrix = 0;
+
+            ButtonsData[33].ValueForMatrix = 0;
+
+            //for (int i = 0; i <= 34; i++)
+            //{
                
-                if(i==25)
-                {
-                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
-                }
-                else if (i == 29)
-                {
-                    ButtonsData[i].Visibility=ButtonVisibility.Hidden;
-                }
-                else if (i==31)
-                {
-                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
-                }
-                else if (i==33)
-                {
-                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
-                }
-                else
-                {
-                    ButtonsData[i].Visibility = ButtonVisibility.Visible;
-                }
-            }
+            //    if(i==25)
+            //    {
+            //        ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+            //    }
+            //    else if (i == 29)
+            //    {
+            //        ButtonsData[i].Visibility=ButtonVisibility.Hidden;
+            //    }
+            //    else if (i==31)
+            //    {
+            //        ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+            //    }
+            //    else if (i==33)
+            //    {
+            //        ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+            //    }
+            //    else
+            //    {
+            //        ButtonsData[i].Visibility = ButtonVisibility.Visible;
+            //    }
+            //}
 
+
+            //////////////////////TEST////////////////////////////////
+            string test = ArrayPrologModel.ArrayToPrologList(ButtonsData);
+
+            MessageBox.Show(test);
+
+            test = test.Replace('0', '1');
+
+            ButtonsData=ArrayPrologModel.PrologListToArray(ButtonsData, test);
+
+            MessageBox.Show("Test  - Zakomentuj na dole ViewModela, Warto sie zapoznać");
+
+            ///////////////////////////////////////////////////////////////////
 
         }
         
