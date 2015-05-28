@@ -80,6 +80,7 @@ indexOf([_|Tail], Element, Index):-
   indexOf(Tail, Element, Index1), % Check in the tail of the list
   Index is Index1+1.  % and increment the resulting index
 
+
   % A AA AAA AAAA AAAAA
   % B BB BBB BBBB BBBBB
   % C CC CCC CCCC CCCCC
@@ -88,8 +89,63 @@ indexOf([_|Tail], Element, Index):-
   %   GG GGG GGGG
   % H HH HHH HHHH HHHHH
 
-  tokenMove(1,0,0,0,1,1,1,0,0,0)
-abilityToMove( [wejscie|_] , IndexEl , [] ):-
-	tokemMove(A,1,1,1,1,1,1,1,1):-
-		isEqual(A,7),
-		isEqual(A,9),
+  
+  isEmpty( Id, Lista ):-  % sprawdza czy mo¿na wykonaæ ruch, zwraca prawdê jeœli pole jest puste
+	nth0(Id, Lista, 0).
+  FindIdJaguar( Id, Lista ):- % zwraca aktualne id jaguara w liœcie
+    nth0(Id, Lista, 2).
+
+ 
+replace([], _, _, _, _, Listawyj).
+	replace([H|T], Id1, Id2, Id3, Pos, Listawyj):-
+		Pos=Id1 ->
+		(
+			
+			append(Listawyj, [0], Lista),
+			append(Lista,[],Listawyj),
+			Pos1 is Pos +1,
+			replace(T, Id1, Id2, Id3, Pos1, Lista)
+		)
+		;
+		(
+			Pos=Id2 ->(
+						append(Listawyj, [0], Lista),
+						append(Lista,[],Listawyj),
+						Pos1 is Pos +1,
+						replace(T, Id1, Id2, Id3, Pos1, Lista)
+						);
+						(
+							Pos=Id3 -> (
+										 append(Listawyj, [2], Lista),
+										 append(Lista,[],Listawyj),
+										Pos1 is Pos +1,
+										replace(T, Id1, Id2, Id3, Pos1, Lista)
+									);
+
+									(
+										append(Listawyj, H, Lista),
+										append(Lista,[],Listawyj),
+										Pos1 is Pos +1,
+										replace(T, Id1, Id2, Id3, Pos1, Lista)
+									)
+						)
+		).
+
+
+  Move( Listawej, Listawyj ) :-
+	FindIdJaguar( IdJaguar, Listawej ),
+	tokenMove(IdJaguar,A,B,C,D,E,F,G,H),
+		(A=1 -> ( 
+					isEmpty( IdJaguar-6, Listawej )=false ->
+						(
+							tokenMove(IdJaguar-12,X,_,_,_,_,_,_,_),
+							X=1 -> ( 
+										isEmpty( IdJaguar-12, Listawej )=true ->  
+										(
+											replace(Listawej, IdJaguar, IdJaguar-6, IdJaguar-12, 0, Listawyj).
+										)
+									)
+				)
+				
+
+	
