@@ -29,3 +29,23 @@ betterOf(_, _, Pos1, Val1, Pos1, Val1).        % OW innym przypadku Pos1 lepsza 
 %utility(+Pos, -Val) : mowi o tym, ze Pos jest rowna wartosci Val
 %min_to_move(+Pos) : mowi o tym ze obecny gracz(w kontekscie minmax) na Pos jest mins
 %max_to_move(+Pos) : mowi ze obecny gracz(w kontekscie minmax) na Pos jest max
+
+
+indexOf([Element|_], Element, 0). % We found the element
+indexOf([_|Tail], Element, Index):-
+  indexOf(Tail, Element, Index1), % Check in the tail of the list
+  Index is Index1+1.  % and increment the resulting index
+
+  % A AA AAA AAAA AAAAA
+  % B BB BBB BBBB BBBBB
+  % C CC CCC CCCC CCCCC
+  % D DD DDD DDDD DDDDD
+  % E EE EEE EEEE EEEEE
+  %   GG GGG GGGG
+  % H HH HHH HHHH HHHHH
+
+  tokenMove(1,0,0,0,1,1,1,0,0,0)
+abilityToMove( [wejscie|_] , IndexEl , [] ):-
+	tokemMove(A,1,1,1,1,1,1,1,1):-
+		isEqual(A,7),
+		isEqual(A,9),
