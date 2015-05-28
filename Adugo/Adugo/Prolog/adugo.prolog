@@ -1,3 +1,47 @@
+%%%%%%%%%%% 1 2 3 4 5 6 7 8
+tokenMove(1,0,0,0,0,1,0,1,1).
+tokenMove(2,0,0,0,1,1,0,1,0).
+tokenMove(3,0,0,0,1,1,1,1,1).
+tokenMove(4,0,0,0,1,1,0,1,0).
+tokenMove(5,0,0,0,1,0,1,1,0).
+
+tokenMove(6,0,1,0,0,1,0,1,0).
+tokenMove(7,1,1,1,1,1,1,1,1).
+tokenMove(8,0,1,0,1,1,0,1,0).
+tokenMove(9,1,1,1,1,1,1,1,1).
+tokenMove(10,0,1,0,1,0,0,1,0).
+
+%%%%%%%%%%%# 1 2 3 4 5 6 7 8
+tokenMove(11,0,1,1,0,1,0,1,1).
+tokenMove(12,0,1,0,1,1,0,1,0).
+tokenMove(13,1,1,1,1,1,1,1,1).
+tokenMove(14,0,1,0,1,1,0,1,0).
+tokenMove(15,1,1,0,1,0,1,1,0).
+
+tokenMove(16,0,1,0,0,1,0,1,0).
+tokenMove(17,1,1,1,1,1,1,1,1).
+tokenMove(18,0,1,0,1,1,0,1,0).
+tokenMove(19,1,1,1,1,1,1,1,1).
+tokenMove(20,0,1,0,1,0,0,1,0).
+
+tokenMove(21,0,1,1,0,1,0,0,0).
+tokenMove(22,0,1,0,1,1,0,0,0).
+tokenMove(23,1,1,1,1,1,1,1,1).
+tokenMove(24,0,1,0,1,1,0,0,0).
+tokenMove(25,1,1,0,1,0,0,0,0).
+
+tokenMove(26,0,0,0,0,0,0,0,0).
+tokenMove(27,0,0,1,0,1,1,0,1).
+tokenMove(28,0,1,0,1,1,0,1,0).
+tokenMove(29,1,0,0,1,0,1,0,1).
+tokenMove(30,0,0,0,0,0,0,0,0).
+
+tokenMove(31,0,0,1,0,0,0,0,0).
+tokenMove(32,0,0,0,0,0,0,0,0).
+tokenMove(33,0,1,0,0,0,0,0,0).
+tokenMove(34,0,0,0,0,0,0,0,0).
+tokenMove(35,1,0,0,0,0,0,0,0).
+
 minimax(Pos, BestNextPos, Val) :-                     % Pos ma nastepce
     bagof(NextPos, move(Pos, NextPos), NextPosList),
     best(NextPosList, BestNextPos, Val), !.
