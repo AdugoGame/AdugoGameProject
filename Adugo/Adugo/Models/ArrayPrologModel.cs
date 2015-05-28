@@ -29,7 +29,6 @@ namespace Adugo.Models
 
         public static PointDataModel[] PrologListToArray(PointDataModel[] tab, string list)
         {
-            
             int iter = 0;
             foreach (char c in list)
             {
@@ -39,9 +38,7 @@ namespace Adugo.Models
                     iter++;
                 }
             }
-
             return tab;
         }
-
     }
 }

@@ -270,16 +270,16 @@ namespace Adugo.ViewModels
             //}
 
 
-            //////////////////////TEST////////////////////////////////
-            string test = ArrayPrologModel.ArrayToPrologList(ButtonsData);
-
-            MessageBox.Show(test);
-
-            test = test.Replace('0', '1');
-
-            ButtonsData=ArrayPrologModel.PrologListToArray(ButtonsData, test);
-
-            MessageBox.Show("Test  - Zakomentuj na dole ViewModela, Warto sie zapoznać");
+//            //////////////////////TEST////////////////////////////////
+//            string test = ArrayPrologModel.ArrayToPrologList(ButtonsData);
+//
+//            MessageBox.Show(test);
+//
+//            test = test.Replace('0', '1');
+//
+//            ButtonsData=ArrayPrologModel.PrologListToArray(ButtonsData, test);
+//
+//            MessageBox.Show("Test  - Zakomentuj na dole ViewModela, Warto sie zapoznać");
 
             ///////////////////////////////////////////////////////////////////
 
