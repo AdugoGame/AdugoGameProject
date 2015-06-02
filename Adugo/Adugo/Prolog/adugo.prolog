@@ -96,40 +96,69 @@ indexOf([_|Tail], Element, Index):-
     nth0(Id, Lista, 2).
 
  
-replace([], _, _, _, _, Listawyj).
-	replace([H|T], Id1, Id2, Id3, Pos, Listawyj):-
-		Pos=Id1 ->
-		(
-			
-			append(Listawyj, [0], Lista),
-			append(Lista,[],Listawyj),
-			Pos1 is Pos +1,
-			replace(T, Id1, Id2, Id3, Pos1, Lista)
-		)
-		;
-		(
-			Pos=Id2 ->(
-						append(Listawyj, [0], Lista),
-						append(Lista,[],Listawyj),
-						Pos1 is Pos +1,
-						replace(T, Id1, Id2, Id3, Pos1, Lista)
-						);
-						(
-							Pos=Id3 -> (
-										 append(Listawyj, [2], Lista),
-										 append(Lista,[],Listawyj),
-										Pos1 is Pos +1,
-										replace(T, Id1, Id2, Id3, Pos1, Lista)
-									);
 
-									(
-										append(Listawyj, H, Lista),
-										append(Lista,[],Listawyj),
-										Pos1 is Pos +1,
-										replace(T, Id1, Id2, Id3, Pos1, Lista)
-									)
-						)
-		).
+add_tail([],X,[X]).
+add_tail([H|T],X,[H|L]):-
+	add_tail(T,X,L).
+	
+replace(List, Id1, Id2, Id3, Exit):-
+	replace(List, Id1, Id2, Id3, 0, [], Exit).
+	
+replace([], _, _, _, _, Exit, Exit).
+replace([H|T], Pos, Id2, Id3, Pos, Listawyj,V):-
+	add_tail(Listawyj, 0, Listawyj1),
+	Pos1 is Pos +1,
+	replace(T, Pos, Id2, Id3, Pos1, Listawyj1,V).
+replace([H|T], Id1, Pos, Id3, Pos, Listawyj,V):-
+	add_tail(Listawyj, 0, Listawyj1),
+	Pos1 is Pos +1,
+	replace(T, Id1, Pos, Id3, Pos1, Listawyj1,V).
+replace([H|T], Id1, Id2, Pos, Pos, Listawyj,V):-
+	add_tail(Listawyj, 2, Listawyj1),
+	Pos1 is Pos +1,
+	replace(T, Id1, Id2, Pos, Pos1, Listawyj1,V).
+replace([H|T], Id1, Id2, Id3, Pos, Listawyj,V):-
+	add_tail(Listawyj, H, Listawyj1),
+	Pos1 is Pos +1,
+	replace(T, Id1, Id2, Id3, Pos1, Listawyj1,V).		
+
+
+
+
+%replace([], _, _, _, _, Listawyj).
+%	replace([H|T], Id1, Id2, Id3, Pos, Listawyj):-
+%		Pos=Id1 ->
+%		(
+%			
+%			append(Listawyj, [0], Lista),
+%			append(Lista,[],Listawyj),
+%			Pos1 is Pos +1,
+%			replace(T, Id1, Id2, Id3, Pos1, Lista)
+%		)
+%		;
+%		(
+%			Pos=Id2 ->(
+%						append(Listawyj, [0], Lista),
+%						append(Lista,[],Listawyj),
+%						Pos1 is Pos +1,
+%						replace(T, Id1, Id2, Id3, Pos1, Lista)
+%						);
+%						(
+%							Pos=Id3 -> (
+%										 append(Listawyj, [2], Lista),
+%										 append(Lista,[],Listawyj),
+%										Pos1 is Pos +1,
+%										replace(T, Id1, Id2, Id3, Pos1, Lista)
+%									);
+%
+%									(
+%										append(Listawyj, H, Lista),
+%										append(Lista,[],Listawyj),
+%										Pos1 is Pos +1,
+%										replace(T, Id1, Id2, Id3, Pos1, Lista)
+%									)
+%						)
+%		).
 
 
   Move( Listawej, Listawyj ) :-
