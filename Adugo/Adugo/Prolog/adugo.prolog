@@ -92,10 +92,11 @@ indexOf([_|Tail], Element, Index):-
   
   isEmpty( Id, Lista, Exit ):-  % sprawdza czy mo¿na wykonaæ ruch, zwraca prawdê jeœli pole jest puste
 	nth0(Id, Lista, 0),
-	Exit is 1.
+	Exit is 1,
+	!.
   isEmpty( Id, Lista, Exit ):-  % sprawdza czy mo¿na wykonaæ ruch, zwraca prawdê jeœli pole jest puste
-	not(nth0(Id, Lista, 0),),
-	Exit is 0.
+	Exit is 0,
+	!.
   findIdJaguar( Lista, Id ):- % zwraca aktualne id jaguara w liœcie
     nth0(Id, Lista, 2).
 
@@ -108,19 +109,20 @@ add_tail([H|T],X,[H|L]):-
 replace(List, Id1, Id2, Id3, Exit):-
 	replace(List, Id1, Id2, Id3, 0, [], Exit).
 	
-replace([], _, _, _, _, Exit, Exit).
+replace([], _, _, _, _, Exit, Exit):-
+	!.
 replace([H|T], Pos, Id2, Id3, Pos, Listawyj,V):-
 	add_tail(Listawyj, 0, Listawyj1),
 	Pos1 is Pos +1,
-	replace(T, Pos, Id2, Id3, Pos1, Listawyj1,V).
+	replace(T, Pos, Id2, Id3, Pos1, Listawyj1,V),!.
 replace([H|T], Id1, Pos, Id3, Pos, Listawyj,V):-
 	add_tail(Listawyj, 0, Listawyj1),
 	Pos1 is Pos +1,
-	replace(T, Id1, Pos, Id3, Pos1, Listawyj1,V).
+	replace(T, Id1, Pos, Id3, Pos1, Listawyj1,V),!.
 replace([H|T], Id1, Id2, Pos, Pos, Listawyj,V):-
 	add_tail(Listawyj, 2, Listawyj1),
 	Pos1 is Pos +1,
-	replace(T, Id1, Id2, Pos, Pos1, Listawyj1,V).
+	replace(T, Id1, Id2, Pos, Pos1, Listawyj1,V),!.
 replace([H|T], Id1, Id2, Id3, Pos, Listawyj,V):-
 	add_tail(Listawyj, H, Listawyj1),
 	Pos1 is Pos +1,
