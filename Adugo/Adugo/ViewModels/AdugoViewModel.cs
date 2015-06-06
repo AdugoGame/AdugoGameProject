@@ -244,30 +244,30 @@ namespace Adugo.ViewModels
 
             ButtonsData[33].ValueForMatrix = 0;
 
-            //for (int i = 0; i <= 34; i++)
-            //{
+            for (int i = 0; i <= 34; i++)
+            {
                
-            //    if(i==25)
-            //    {
-            //        ButtonsData[i].Visibility = ButtonVisibility.Hidden;
-            //    }
-            //    else if (i == 29)
-            //    {
-            //        ButtonsData[i].Visibility=ButtonVisibility.Hidden;
-            //    }
-            //    else if (i==31)
-            //    {
-            //        ButtonsData[i].Visibility = ButtonVisibility.Hidden;
-            //    }
-            //    else if (i==33)
-            //    {
-            //        ButtonsData[i].Visibility = ButtonVisibility.Hidden;
-            //    }
-            //    else
-            //    {
-            //        ButtonsData[i].Visibility = ButtonVisibility.Visible;
-            //    }
-            //}
+                if(i==25)
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+                }
+                else if (i == 29)
+                {
+                    ButtonsData[i].Visibility=ButtonVisibility.Hidden;
+                }
+                else if (i==31)
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+                }
+                else if (i==33)
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Hidden;
+                }
+                else
+                {
+                    ButtonsData[i].Visibility = ButtonVisibility.Visible;
+                }
+            }
 
 
 //            //////////////////////TEST////////////////////////////////

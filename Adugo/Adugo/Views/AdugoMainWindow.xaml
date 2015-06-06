@@ -39,19 +39,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         
-        <!-- wyniki -->
-        <Button             Width="200" 
-                            Height="200"
-                            Content="{Binding RoundNumber}" 
-                           
-                            Visibility="Visible"
-                            BorderBrush="{x:Null}" Margin="537,69,195,540">
-            <Button.Background>
-
-                <ImageBrush ImageSource="{Binding RoundBackground}"/>
-
-            </Button.Background>
-        </Button>
+        
 
         <!-- 
         
