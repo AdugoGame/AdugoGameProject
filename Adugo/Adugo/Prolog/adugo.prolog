@@ -1,4 +1,4 @@
-start(Listawej,[H|Ruch1]):-
+start(Listawej,[Ruch1]):-
 	begin(Listawej,[H1|Ruch1],[H|Fin]),
 	not(wiecejZbitych(Listawej,Listawyj,H)),!.
 
