@@ -1,160 +1,188 @@
+start(Listawej,[H|Fin]):-
+	begin(Listawej,[H1|Ruch1],[H|Fin]),
+	not(wiecejZbitych(Listawej,Listawyj,H)),!.
 
-%------------------ Funkcja mo¿liwych ruchów ------------------%
-move( Listawej, Listawyj ) :-
-	findIdJaguar( Listawej, IdJaguar ),
-	canTokenMove(Listawej, IdJaguar, Listawyj).
+wiecejZbitych(Listawej,Listawyj,H):-
+	begin(Listawej,[H2|Ruch2],[Hb|Finb]),
+	Hb > H.
+	
 
-%------------------ Funkcje mo¿liwego ruchu w danych kierunkach z mo¿liwym biciem ------------------%
-	%%%%%% Ujemne
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+begin(Listawej, Listawyj1, Listawyj):-
+	move([0|Listawej],Listawyj1),
+	allDogs(Listawyj1,Listawyj2),
+	move(Listawyj2,Listawyj3),
+	allDogs(Listawyj3,Listawyj4),
+	move(Listawyj4,Listawyj).
+
+	
+
+move( [H|Listawej], Listawyj ) :-
+	findIdJaguar(Listawej, IdJaguar ),
+	canTokenMove([H|Listawej], IdJaguar, Listawyj).
+
+
+
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 6,
 	IdJaguar3 is IdJaguar - 12,
 	tokenMove(IdJaguar,1,_,_,_,_,_,_,_),
 	tokenMove(IdJaguar2,1,_,_,_,_,_,_,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 6,
 	tokenMove(IdJaguar,1,_,_,_,_,_,_,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 5,
 	IdJaguar3 is IdJaguar - 10,
 	tokenMove(IdJaguar,_,1,_,_,_,_,_,_),
 	tokenMove(IdJaguar2,_,1,_,_,_,_,_,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 5,
 	tokenMove(IdJaguar,_,1,_,_,_,_,_,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 		
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 4,
 	IdJaguar3 is IdJaguar - 8,
 	tokenMove(IdJaguar,_,_,1,_,_,_,_,_),
 	tokenMove(IdJaguar2,_,_,1,_,_,_,_,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 4,
 	tokenMove(IdJaguar,_,_,1,_,_,_,_,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 1,
 	IdJaguar3 is IdJaguar - 2,
 	tokenMove(IdJaguar,_,_,_,1,_,_,_,_),
 	tokenMove(IdJaguar2,_,_,_,1,_,_,_,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 1,
 	tokenMove(IdJaguar,_,_,_,1,_,_,_,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 	
-%%%%%%%%% dodatnie
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+
+	
+	
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 1,
 	IdJaguar3 is IdJaguar + 2,
 	tokenMove(IdJaguar,_,_,_,_,1,_,_,_),
 	tokenMove(IdJaguar2,_,_,_,_,1,_,_,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 1,
 	tokenMove(IdJaguar,_,_,_,_,1,_,_,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 4,
 	IdJaguar3 is IdJaguar + 8,
 	tokenMove(IdJaguar,_,_,_,_,_,1,_,_),
 	tokenMove(IdJaguar2,_,_,_,_,_,1,_,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 4,
 	tokenMove(IdJaguar,_,_,_,_,_,1,_,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 5,
 	IdJaguar3 is IdJaguar + 10,
 	tokenMove(IdJaguar,_,_,_,_,_,_,1,_),
 	tokenMove(IdJaguar2,_,_,_,_,_,_,1,_),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 5,
 	tokenMove(IdJaguar,_,_,_,_,_,_,1,_),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 6,
 	IdJaguar3 is IdJaguar + 12,
 	tokenMove(IdJaguar,_,_,_,_,_,_,_,1),
 	tokenMove(IdJaguar2,_,_,_,_,_,_,_,1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, IdJaguar, Listawyj):-
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 6,
 	tokenMove(IdJaguar,_,_,_,_,_,_,_,1),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
-%%%%%%%%% specjalne
-canTokenMove(Listawej, 30, Listawyj):-
+
+canTokenMove([H|Listawej], 30, [H|Listawyj]):-
 	IdJaguar2 is 32,
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, 30, -1, IdJaguar2, Listawyj).
-canTokenMove(Listawej, 32, Listawyj):-
+canTokenMove([H|Listawej], 32, [H|Listawyj]):-
 	IdJaguar2 is 34,
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, 32, -1, IdJaguar2, Listawyj).
-canTokenMove(Listawej, 34, Listawyj):-
+canTokenMove([H|Listawej], 34, [H|Listawyj]):-
 	IdJaguar2 is 32,
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, 34, -1, IdJaguar2, Listawyj).
-canTokenMove(Listawej, 32, Listawyj):-
+canTokenMove([H|Listawej], 32, [H|Listawyj]):-
 	IdJaguar2 is 30,
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, 32, -1, IdJaguar2, Listawyj).
 
-canTokenMove(Listawej, 30, Listawyj):-
+canTokenMove([H|Listawej], 30, [H1|Listawyj]):-
 	IdJaguar2 is 32,
 	IdJaguar3 is 34,
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, 30, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove(Listawej, 34, Listawyj):-
+canTokenMove([H|Listawej], 34, [H1|Listawyj]):-
 	IdJaguar2 is 32,
 	IdJaguar3 is 30,
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
+	H1 is H +1,
 	replace(Listawej, 34, IdJaguar2, IdJaguar3, Listawyj).
 
 
 
 
-%------------------ Ograniczenia planszy ------------------%
-%%%%%%%%%%% 1 2 3 4 5 6 7 8
+
+
 tokenMove(0,0,0,0,0,1,0,1,1).
 tokenMove(1,0,0,0,1,1,0,1,0).
 tokenMove(2,0,0,0,1,1,1,1,1).
@@ -167,7 +195,6 @@ tokenMove(7,0,1,0,1,1,0,1,0).
 tokenMove(8,1,1,1,1,1,1,1,1).
 tokenMove(9,0,1,0,1,0,0,1,0).
 
-%%%%%%%%%%%# 1 2 3 4 5 6 7 8
 tokenMove(10,0,1,1,0,1,0,1,1).
 tokenMove(11,0,1,0,1,1,0,1,0).
 tokenMove(12,1,1,1,1,1,1,1,1).
@@ -198,9 +225,9 @@ tokenMove(32,0,1,0,0,0,0,0,0).
 tokenMove(33,0,0,0,0,0,0,0,0).
 tokenMove(34,1,0,0,0,0,0,0,0).
 
-isEmpty( Id, Lista):-  % sprawdza czy mo¿na wykonaæ ruch, zwraca prawdê jeœli pole jest puste
+isEmpty( Id, Lista):-  
 	nth0(Id, Lista,0).
-findIdJaguar( Lista, Id ):- % zwraca aktualne id jaguara w liœcie
+findIdJaguar( Lista, Id ):-
 	nth0(Id, Lista, 2),
 	!.
 add_tail([],X,[X]).
@@ -230,7 +257,7 @@ replace([H|T], Id1, Id2, Id3, Pos, Listawyj,V):-
 	Pos1 is Pos +1,
 	replace(T, Id1, Id2, Id3, Pos1, Listawyj1,V),!.		
 
-allDogs(Listawej,Listawyj):-
+allDogs([H|Listawej],[H|Listawyj]):-
 	dogMove(Listawej,Listawyj).
 
 dogMove(Listawej,Listawyj):-
@@ -302,12 +329,10 @@ dogMove(Listawej,Listawyj):-
 
 
 
-%dogMove(Listawej,35,Listawyj):- !.
+
 singleDog(Listawej,Iter,Listawyj):-
 	nth0(Iter, Listawej, 1),
 	moveDog(Listawej,Iter,Listawyj).
-	%Iter1 is Iter+1,
-	%dogMove(Listawej,Iter1,Listawyj).
 	
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies - 6,
@@ -350,7 +375,6 @@ moveDog(Listawej, IdPies, Listawyj):-
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 
-%%%%% specjalne
 moveDog(Listawej, 30, Listawyj):-
 	IdPies2 is 32,
 	isEmpty( IdPies2, Listawej ),
@@ -388,36 +412,3 @@ replacePies([H|T], Id1, Id2, Pos, Listawyj,V):-
 	add_tail(Listawyj, H, Listawyj1),
 	Pos1 is Pos +1,
 	replacePies(T, Id1, Id2, Pos1, Listawyj1,V),!.	
-
-
-minimax(Pos, BestNextPos, Val) :-                     % Pos ma nastepce
-    bagof(NextPos, move(Pos, NextPos), NextPosList),
-    best(NextPosList, BestNextPos, Val), !.
-
-minimax(Pos, _, Val) :-                     % Pos nie ma nastepcow
-    utility(Pos, Val).
-
-best([Pos], Pos, Val) :-                                % Nie ma juz wiecej pozycji do porownania
-    minimax(Pos, _, Val), !.
-
-best([Pos1 | PosList], BestPos, BestVal) :-             % Istnieja pozycje do porownania
-    minimax(Pos1, _, Val1),
-    best(PosList, Pos2, Val2),
-    betterOf(Pos1, Val1, Pos2, Val2, BestPos, BestVal).
-	
-betterOf(Pos0, Val0, _, Val1, Pos0, Val0) :-   % Pos0 lepsza Pos1
-    min_to_move(Pos0),                         % MIN ma zmienic pozycje na Pos0
-    Val0 > Val1, !.                            % MAX preferuje wieksza wartosc
-
-betterOf(Pos0, Val0, _, Val1, Pos0, Val0) :-   % Pos0 lepsza Pos1
-    max_to_move(Pos0),                         % MAX ma zmienic pozycje na Pos0
-    Val0 < Val1, !.                            % MIN preferuje mniejsza wartosc
-
-betterOf(_, _, Pos1, Val1, Pos1, Val1).        % OW innym przypadku Pos1 lepsza od Pos0
-
-%nalezy zaimplementowac nastepujace metody
-
-%move(+Pos, -NextPos) : mowi o tym ze NextPos jest legalnym ruchem od Pos
-%utility(+Pos, -Val) : mowi o tym, ze Pos jest rowna wartosci Val
-%min_to_move(+Pos) : mowi o tym ze obecny gracz(w kontekscie minmax) na Pos jest mins
-%max_to_move(+Pos) : mowi ze obecny gracz(w kontekscie minmax) na Pos jest max
