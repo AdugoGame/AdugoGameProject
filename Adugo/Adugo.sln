@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adugo", "Adugo\Adugo.csproj", "{9C889930-FE6C-448C-A121-243198C7CF39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prolog", "..\..\..\..\Pulpit\Prolog.NET-master\Prolog.NET-master\codeplex\Prolog\Prolog.csproj", "{171A6B22-168C-4662-8706-131C098622BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prolog", "Prolog\Prolog.csproj", "{171A6B22-168C-4662-8706-131C098622BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

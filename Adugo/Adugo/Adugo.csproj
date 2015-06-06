@@ -183,7 +183,7 @@
     <Resource Include="Media\doge_y.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Pulpit\Prolog.NET-master\Prolog.NET-master\codeplex\Prolog\Prolog.csproj">
+    <ProjectReference Include="..\Prolog\Prolog.csproj">
       <Project>{171a6b22-168c-4662-8706-131c098622bd}</Project>
       <Name>Prolog</Name>
     </ProjectReference>
