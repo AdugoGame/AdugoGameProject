@@ -230,6 +230,165 @@ replace([H|T], Id1, Id2, Id3, Pos, Listawyj,V):-
 	Pos1 is Pos +1,
 	replace(T, Id1, Id2, Id3, Pos1, Listawyj1,V),!.		
 
+allDogs(Listawej,Listawyj):-
+	dogMove(Listawej,Listawyj).
+
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,0,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,1,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,2,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,3,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,4,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,5,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,6,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,7,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,8,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,9,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,10,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,11,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,12,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,13,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,14,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,15,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,16,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,17,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,18,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,19,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,20,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,21,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,22,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,23,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,24,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,25,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,26,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,27,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,28,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,29,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,30,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,32,Listawyj).
+dogMove(Listawej,Listawyj):-
+	singleDog(Listawej,34,Listawyj).
+
+
+
+%dogMove(Listawej,35,Listawyj):- !.
+singleDog(Listawej,Iter,Listawyj):-
+	nth0(Iter, Listawej, 1),
+	moveDog(Listawej,Iter,Listawyj).
+	%Iter1 is Iter+1,
+	%dogMove(Listawej,Iter1,Listawyj).
+	
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies - 6,
+	tokenMove(IdPies,1,_,_,_,_,_,_,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies - 5,
+	tokenMove(IdPies,_,1,_,_,_,_,_,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies - 4,
+	tokenMove(IdPies,_,_,1,_,_,_,_,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies - 1,
+	tokenMove(IdPies,_,_,_,1,_,_,_,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies + 1,
+	tokenMove(IdPies,_,_,_,_,1,_,_,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies + 4,
+	tokenMove(IdPies,_,_,_,_,_,1,_,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies + 5,
+	tokenMove(IdPies,_,_,_,_,_,_,1,_),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+moveDog(Listawej, IdPies, Listawyj):-
+	IdPies2 is IdPies + 6,
+	tokenMove(IdPies,_,_,_,_,_,_,_,1),
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, IdPies, IdPies2, Listawyj).
+
+%%%%% specjalne
+moveDog(Listawej, 30, Listawyj):-
+	IdPies2 is 32,
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, 30, IdPies2, Listawyj).
+moveDog(Listawej, 32, Listawyj):-
+	IdPies2 is 34,
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, 32, IdPies2, Listawyj).
+moveDog(Listawej, 34, Listawyj):-
+	IdPies2 is 32,
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, 34, IdPies2, Listawyj).
+moveDog(Listawej, 32, Listawyj):-
+	IdPies2 is 30,
+	isEmpty( IdPies2, Listawej ),
+	replacePies(Listawej, 32, IdPies2, Listawyj).	
+	
+	
+	
+	
+replacePies(List, Id1, Id2, Exit):-
+	replacePies(List, Id1, Id2, 0, [], Exit).
+	
+replacePies([], _, _, _, Exit, Exit):-
+	!.
+replacePies([H|T], Pos, Id2, Pos, Listawyj,V):-
+	add_tail(Listawyj, 0, Listawyj1),
+	Pos1 is Pos +1,
+	replacePies(T, Pos, Id2, Pos1, Listawyj1,V),!.
+replacePies([H|T], Id1, Pos, Pos, Listawyj,V):-
+	add_tail(Listawyj, 1, Listawyj1),
+	Pos1 is Pos +1,
+	replacePies(T, Id1, Pos, Pos1, Listawyj1,V),!.
+replacePies([H|T], Id1, Id2, Pos, Listawyj,V):-
+	add_tail(Listawyj, H, Listawyj1),
+	Pos1 is Pos +1,
+	replacePies(T, Id1, Id2, Pos1, Listawyj1,V),!.	
+
 
 minimax(Pos, BestNextPos, Val) :-                     % Pos ma nastepce
     bagof(NextPos, move(Pos, NextPos), NextPosList),
