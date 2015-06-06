@@ -96,7 +96,7 @@ indexOf([_|Tail], Element, Index):-
   isEmpty( Id, Lista, Exit ):-  % sprawdza czy mo¿na wykonaæ ruch, zwraca prawdê jeœli pole jest puste
 	not(nth0(Id, Lista, 0),),
 	Exit is 0.
-  findIdJaguar( Id, Lista ):- % zwraca aktualne id jaguara w liœcie
+  findIdJaguar( Lista, Id ):- % zwraca aktualne id jaguara w liœcie
     nth0(Id, Lista, 2).
 
  
@@ -165,8 +165,8 @@ replace([H|T], Id1, Id2, Id3, Pos, Listawyj,V):-
 %		).
 
 
- move( [Listawej], [Listawyj] ) :-
-	findIdJaguar( IdJaguar, Listawej ),
+ move( Listawej, Listawyj ) :-
+	findIdJaguar( Listawej, IdJaguar ),
 	canTokenMove(Listawej, IdJaguar, Listawyj).
 	
 	%%%%%% Ujemne
