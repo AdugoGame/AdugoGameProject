@@ -1,4 +1,4 @@
-start(Listawej,[H|Fin]):-
+start(Listawej,[H|Ruch1]):-
 	begin(Listawej,[H1|Ruch1],[H|Fin]),
 	not(wiecejZbitych(Listawej,Listawyj,H)),!.
 
@@ -25,60 +25,60 @@ move( [H|Listawej], Listawyj ) :-
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 6,
 	IdJaguar3 is IdJaguar - 12,
-	tokenMove(IdJaguar,1,_,_,_,_,_,_,_),
-	tokenMove(IdJaguar2,1,_,_,_,_,_,_,_),
+	tokenMove(IdJaguar,1,A,B,C,D,E,F,G),
+	tokenMove(IdJaguar2,1,A1,B1,C1,D1,E1,F1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 6,
-	tokenMove(IdJaguar,1,_,_,_,_,_,_,_),
+	tokenMove(IdJaguar,1,A,B,C,D,E,F,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 5,
 	IdJaguar3 is IdJaguar - 10,
-	tokenMove(IdJaguar,_,1,_,_,_,_,_,_),
-	tokenMove(IdJaguar2,_,1,_,_,_,_,_,_),
+	tokenMove(IdJaguar,A,1,B,C,D,E,F,G),
+	tokenMove(IdJaguar2,A1,1,B1,C1,D1,E1,F1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 5,
-	tokenMove(IdJaguar,_,1,_,_,_,_,_,_),
+	tokenMove(IdJaguar,A,1,B,C,D,E,F,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 		
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 4,
 	IdJaguar3 is IdJaguar - 8,
-	tokenMove(IdJaguar,_,_,1,_,_,_,_,_),
-	tokenMove(IdJaguar2,_,_,1,_,_,_,_,_),
+	tokenMove(IdJaguar,A,B,1,C,D,E,F,G),
+	tokenMove(IdJaguar2,A1,B1,1,C1,D1,E1,F1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 4,
-	tokenMove(IdJaguar,_,_,1,_,_,_,_,_),
+	tokenMove(IdJaguar,A,B,1,C,D,E,F,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 1,
 	IdJaguar3 is IdJaguar - 2,
-	tokenMove(IdJaguar,_,_,_,1,_,_,_,_),
-	tokenMove(IdJaguar2,_,_,_,1,_,_,_,_),
+	tokenMove(IdJaguar,A,B,C,1,D,E,F,G),
+	tokenMove(IdJaguar2,A1,B1,C1,1,D1,E1,F1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar - 1,
-	tokenMove(IdJaguar,_,_,_,1,_,_,_,_),
+	tokenMove(IdJaguar,A,B,C,1,D,E,F,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 	
@@ -88,60 +88,60 @@ canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 1,
 	IdJaguar3 is IdJaguar + 2,
-	tokenMove(IdJaguar,_,_,_,_,1,_,_,_),
-	tokenMove(IdJaguar2,_,_,_,_,1,_,_,_),
+	tokenMove(IdJaguar,A,B,C,D,1,E,F,G),
+	tokenMove(IdJaguar2,A1,B1,C1,D1,1,E1,F1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 1,
-	tokenMove(IdJaguar,_,_,_,_,1,_,_,_),
+	tokenMove(IdJaguar,A,B,C,D,1,E,F,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 4,
 	IdJaguar3 is IdJaguar + 8,
-	tokenMove(IdJaguar,_,_,_,_,_,1,_,_),
-	tokenMove(IdJaguar2,_,_,_,_,_,1,_,_),
+	tokenMove(IdJaguar,A,B,C,D,E,1,F,G),
+	tokenMove(IdJaguar2,A1,B1,C1,D1,E1,1,F1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 4,
-	tokenMove(IdJaguar,_,_,_,_,_,1,_,_),
+	tokenMove(IdJaguar,A,B,C,D,E,1,F,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 5,
 	IdJaguar3 is IdJaguar + 10,
-	tokenMove(IdJaguar,_,_,_,_,_,_,1,_),
-	tokenMove(IdJaguar2,_,_,_,_,_,_,1,_),
+	tokenMove(IdJaguar,A,B,C,D,E,F,1,G),
+	tokenMove(IdJaguar2,A1,B1,C1,D1,E1,F1,1,G1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 5,
-	tokenMove(IdJaguar,_,_,_,_,_,_,1,_),
+	tokenMove(IdJaguar,A,B,C,D,E,F,1,G),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 6,
 	IdJaguar3 is IdJaguar + 12,
-	tokenMove(IdJaguar,_,_,_,_,_,_,_,1),
-	tokenMove(IdJaguar2,_,_,_,_,_,_,_,1),
+	tokenMove(IdJaguar,A,B,C,D,E,F,G,1),
+	tokenMove(IdJaguar2,A1,B1,C1,D1,E1,F1,G1,1),
 	isEmpty( IdJaguar3, Listawej ),
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
 canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
 	IdJaguar2 is IdJaguar + 6,
-	tokenMove(IdJaguar,_,_,_,_,_,_,_,1),
+	tokenMove(IdJaguar,A,B,C,D,E,F,G,1),
 	isEmpty( IdJaguar2, Listawej ),
 	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
@@ -230,30 +230,30 @@ isEmpty( Id, Lista):-
 findIdJaguar( Lista, Id ):-
 	nth0(Id, Lista, 2),
 	!.
-add_tail([],X,[X]).
-add_tail([H|T],X,[H|L]):-
-	add_tail(T,X,L).
+addTail([],X,[X]).
+addTail([H|T],X,[H|L]):-
+	addTail(T,X,L).
 	
 
 replace(List, Id1, Id2, Id3, Exit):-
 	replace(List, Id1, Id2, Id3, 0, [], Exit).
 	
-replace([], _, _, _, _, Exit, Exit):-
+replace([], A, B, C, D, Exit, Exit):-
 	!.
 replace([H|T], Pos, Id2, Id3, Pos, Listawyj,V):-
-	add_tail(Listawyj, 0, Listawyj1),
+	addTail(Listawyj, 0, Listawyj1),
 	Pos1 is Pos +1,
 	replace(T, Pos, Id2, Id3, Pos1, Listawyj1,V),!.
 replace([H|T], Id1, Pos, Id3, Pos, Listawyj,V):-
-	add_tail(Listawyj, 0, Listawyj1),
+	addTail(Listawyj, 0, Listawyj1),
 	Pos1 is Pos +1,
 	replace(T, Id1, Pos, Id3, Pos1, Listawyj1,V),!.
 replace([H|T], Id1, Id2, Pos, Pos, Listawyj,V):-
-	add_tail(Listawyj, 2, Listawyj1),
+	addTail(Listawyj, 2, Listawyj1),
 	Pos1 is Pos +1,
 	replace(T, Id1, Id2, Pos, Pos1, Listawyj1,V),!.
 replace([H|T], Id1, Id2, Id3, Pos, Listawyj,V):-
-	add_tail(Listawyj, H, Listawyj1),
+	addTail(Listawyj, H, Listawyj1),
 	Pos1 is Pos +1,
 	replace(T, Id1, Id2, Id3, Pos1, Listawyj1,V),!.		
 
@@ -336,42 +336,42 @@ singleDog(Listawej,Iter,Listawyj):-
 	
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies - 6,
-	tokenMove(IdPies,1,_,_,_,_,_,_,_),
+	tokenMove(IdPies,1,A,B,C,D,E,F,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies - 5,
-	tokenMove(IdPies,_,1,_,_,_,_,_,_),
+	tokenMove(IdPies,A,1,B,C,D,E,F,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies - 4,
-	tokenMove(IdPies,_,_,1,_,_,_,_,_),
+	tokenMove(IdPies,A,B,1,C,D,E,F,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies - 1,
-	tokenMove(IdPies,_,_,_,1,_,_,_,_),
+	tokenMove(IdPies,A,B,C,1,D,E,F,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies + 1,
-	tokenMove(IdPies,_,_,_,_,1,_,_,_),
+	tokenMove(IdPies,A,B,C,D,1,E,F,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies + 4,
-	tokenMove(IdPies,_,_,_,_,_,1,_,_),
+	tokenMove(IdPies,A,B,C,D,E,1,F,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies + 5,
-	tokenMove(IdPies,_,_,_,_,_,_,1,_),
+	tokenMove(IdPies,A,B,C,D,E,F,1,G),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 moveDog(Listawej, IdPies, Listawyj):-
 	IdPies2 is IdPies + 6,
-	tokenMove(IdPies,_,_,_,_,_,_,_,1),
+	tokenMove(IdPies,A,B,C,D,E,F,G,1),
 	isEmpty( IdPies2, Listawej ),
 	replacePies(Listawej, IdPies, IdPies2, Listawyj).
 
@@ -398,17 +398,17 @@ moveDog(Listawej, 32, Listawyj):-
 replacePies(List, Id1, Id2, Exit):-
 	replacePies(List, Id1, Id2, 0, [], Exit).
 	
-replacePies([], _, _, _, Exit, Exit):-
+replacePies([], A, B, C, Exit, Exit):-
 	!.
 replacePies([H|T], Pos, Id2, Pos, Listawyj,V):-
-	add_tail(Listawyj, 0, Listawyj1),
+	addTail(Listawyj, 0, Listawyj1),
 	Pos1 is Pos +1,
 	replacePies(T, Pos, Id2, Pos1, Listawyj1,V),!.
 replacePies([H|T], Id1, Pos, Pos, Listawyj,V):-
-	add_tail(Listawyj, 1, Listawyj1),
+	addTail(Listawyj, 1, Listawyj1),
 	Pos1 is Pos +1,
 	replacePies(T, Id1, Pos, Pos1, Listawyj1,V),!.
 replacePies([H|T], Id1, Id2, Pos, Listawyj,V):-
-	add_tail(Listawyj, H, Listawyj1),
+	addTail(Listawyj, H, Listawyj1),
 	Pos1 is Pos +1,
 	replacePies(T, Id1, Id2, Pos1, Listawyj1,V),!.	
