@@ -17,12 +17,13 @@ namespace Adugo.Models
 
         public GameControl()
         {
-  
+            PrologModel.test();
              
             DogeCount = 14;
             Moves = 0;
             Turn = PlayerRound.Jaguar;
             MessageBox.Show("Info: Zaczyna jaguar");
+
         }
 
         public void NextTurn()

@@ -74,12 +74,6 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Lingua">
-      <HintPath>..\packages\Lingua.dll.1.0.1\lib\net40\Lingua.dll</HintPath>
-    </Reference>
-    <Reference Include="Prolog">
-      <HintPath>..\packages\Prolog.NET.1.0.2\lib\net40\Prolog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -146,7 +140,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Prolog\adugo.prolog" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -177,18 +170,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="License-Lingua.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="License.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Copyright.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Media\map.png" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +181,12 @@
   <ItemGroup>
     <Resource Include="Media\jaguar_y.png" />
     <Resource Include="Media\doge_y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Pulpit\Prolog.NET-master\Prolog.NET-master\codeplex\Prolog\Prolog.csproj">
+      <Project>{171a6b22-168c-4662-8706-131c098622bd}</Project>
+      <Name>Prolog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
