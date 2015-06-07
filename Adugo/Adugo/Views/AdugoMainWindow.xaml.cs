@@ -20,6 +20,16 @@ namespace Adugo
             this.ResizeMode = ResizeMode.NoResize;
         }
 
+        private void Poddajsie_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Surrender_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         
         
     }

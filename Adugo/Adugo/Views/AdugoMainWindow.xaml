@@ -38,8 +38,10 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
-        
+
+        <Button x:Name="Surrender" HorizontalAlignment="Left" Margin="495,431,0,0" VerticalAlignment="Top" Width="257" Height="116" FontFamily="Times New Roman" Background="#FFE65F5F" FontSize="24" Click="Surrender_Click">
+            <Button Content="Poddaj się" Width="171" Click="Poddajsie_Click"/>
+        </Button>
 
         <!-- 
         

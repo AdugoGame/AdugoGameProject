@@ -17,7 +17,7 @@ namespace Adugo.Models
 
         public GameControl()
         {
-            PrologModel.test();
+
              
             DogeCount = 14;
             Moves = 0;
