@@ -1,10 +1,15 @@
 start(Listawej,[Ruch1]):-
-	begin(Listawej,[H1|Ruch1],[H|Fin]),
-	not(wiecejZbitych(Listawej,Listawyj,H)),!.
-
-wiecejZbitych(Listawej,Listawyj,H):-
-	begin(Listawej,[H2|Ruch2],[Hb|Finb]),
-	Hb > H.
+	H is 3,
+	begin(Listawej,[H1|Ruch1],[H|Fin]),!.
+start(Listawej,[Ruch1]):-
+	H is 2,
+	begin(Listawej,[H1|Ruch1],[H|Fin]),!.
+start(Listawej,[Ruch1]):-
+	H is 1,
+	begin(Listawej,[H1|Ruch1],[H|Fin]),!.
+start(Listawej,[Ruch1]):-
+	H is 0,
+	begin(Listawej,[H1|Ruch1],[H|Fin]),!.
 	
 
 begin(Listawej, Listawyj1, Listawyj):-
