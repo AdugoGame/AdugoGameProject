@@ -225,6 +225,17 @@ tokenMove(32,0,1,0,0,0,0,0,0).
 tokenMove(33,0,0,0,0,0,0,0,0).
 tokenMove(34,1,0,0,0,0,0,0,0).
 
+
+nth0(Id, Lista, Value):-
+nth01(0,Lista,Value, Id).
+
+nth01(Iter, [H|T], H, Iter).
+
+nth01(Iter, [H|T], Value, Id):-
+Iter1 is Iter +1,
+nth01(Iter1, T, Value, Id).
+
+
 isEmpty( Id, Lista):-  
 	nth0(Id, Lista,0).
 findIdJaguar( Lista, Id ):-
