@@ -139,7 +139,7 @@ namespace Adugo.ViewModels
                     }
                     else if (value.Background == ButtonBackgrounds.DogeChoosen)
                     {
-                        _SelectedItem.Background = ButtonBackgrounds.Doge;
+                        _SelectedItem.ValueForMatrix = 1;
                         _SelectedItem = null;
                     }
                     else if (value.Background == null && _SelectedItem != null)
@@ -149,7 +149,7 @@ namespace Adugo.ViewModels
                             if (AbilityToMove.TestAbilityToMove(_SelectedItem, value))
                             {
                                 _SelectedItem.Background = null;
-                                value.Background = ButtonBackgrounds.Doge;
+                                value.ValueForMatrix = 1;
                                 _SelectedItem = null;
                                 Game.NextTurn();
                             }
