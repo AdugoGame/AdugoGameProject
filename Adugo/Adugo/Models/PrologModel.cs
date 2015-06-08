@@ -36,10 +36,14 @@ namespace Adugo.Models
             { 
             return machine.QueryResults.m_variables[0].CodeTerm.ToString();
             }
-            else
+            else if(results.ToString()=="Failure")
             {
                 MessageBox.Show("Wygrałeś!!!");
                 return "wygrales";
+            }
+            else
+            {
+                return machine.QueryResults.m_variables[0].CodeTerm.ToString();
             }
         }
 
