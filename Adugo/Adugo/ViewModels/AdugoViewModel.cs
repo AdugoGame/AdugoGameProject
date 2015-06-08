@@ -124,6 +124,11 @@ namespace Adugo.ViewModels
                         }
                     }*/
                     var prologoutput = PrologModel.LoadResponse(":-start(" + ArrayPrologModel.ArrayToPrologList(_ButtonsData) + ",X).");
+                    //prologoutput = "wygrales";
+                    if (prologoutput=="wygrales")
+                    {
+                        prologoutput = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
+                    }
                     _ButtonsData = ArrayPrologModel.PrologListToArray(_ButtonsData, prologoutput);
                     _SelectedItem = null;
                     Game.NextTurn();

@@ -32,8 +32,15 @@ namespace Adugo.Models
 
             PrologMachine machine = PrologMachine.Create(program, query);
             ExecutionResults results = machine.RunToSuccess();
+            if (results.ToString() == "Succes")
+            { 
             return machine.QueryResults.m_variables[0].CodeTerm.ToString();
-
+            }
+            else
+            {
+                MessageBox.Show("Wygrałeś!!!");
+                return "wygrales";
+            }
         }
 
             //codeSentence = Prolog.Parser.Parse(":-hello(X)");
