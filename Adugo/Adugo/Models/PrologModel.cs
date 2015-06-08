@@ -18,7 +18,7 @@ namespace Adugo.Models
 
         public static void Load()
         {
-            codeSentence = Prolog.Parser.Parse(System.IO.File.ReadAllText("../../Prolog/adugo.prolog"));
+            codeSentence = Prolog.Parser.Parse(System.IO.File.ReadAllText("adugo.prolog"));
             program = new Program();
             foreach (var sentence in codeSentence)
             {
