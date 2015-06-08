@@ -36,11 +36,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar - 6,
-	tokenMove(IdJaguar,1,A,B,C,D,E,F,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 5,
@@ -51,11 +47,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar - 5,
-	tokenMove(IdJaguar,A,1,B,C,D,E,F,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 		
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 4,
@@ -66,11 +58,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar - 4,
-	tokenMove(IdJaguar,A,B,1,C,D,E,F,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar - 1,
@@ -81,11 +69,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar - 1,
-	tokenMove(IdJaguar,A,B,C,1,D,E,F,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 	
 
 	
@@ -99,11 +83,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar + 1,
-	tokenMove(IdJaguar,A,B,C,D,1,E,F,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 4,
@@ -114,11 +94,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar + 4,
-	tokenMove(IdJaguar,A,B,C,D,E,1,F,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 5,
@@ -129,11 +105,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar + 5,
-	tokenMove(IdJaguar,A,B,C,D,E,F,1,G),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 
 canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	IdJaguar2 is IdJaguar + 6,
@@ -144,11 +116,7 @@ canTokenMove([H|Listawej], IdJaguar, [H1|Listawyj]):-
 	nth0(IdJaguar2, Listawej, 1),
 	H1 is H +1,
 	replace(Listawej, IdJaguar, IdJaguar2, IdJaguar3, Listawyj).
-canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
-	IdJaguar2 is IdJaguar + 6,
-	tokenMove(IdJaguar,A,B,C,D,E,F,G,1),
-	isEmpty( IdJaguar2, Listawej ),
-	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
 
 
 canTokenMove([H|Listawej], 30, [H|Listawyj]):-
@@ -183,10 +151,53 @@ canTokenMove([H|Listawej], 34, [H1|Listawyj]):-
 	H1 is H +1,
 	replace(Listawej, 34, IdJaguar2, IdJaguar3, Listawyj).
 
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar - 6,
+	tokenMove(IdJaguar,1,A,B,C,D,E,F,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar - 5,
+	tokenMove(IdJaguar,A,1,B,C,D,E,F,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar - 4,
+	tokenMove(IdJaguar,A,B,1,C,D,E,F,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar - 1,
+	tokenMove(IdJaguar,A,B,C,1,D,E,F,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar + 1,
+	tokenMove(IdJaguar,A,B,C,D,1,E,F,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar + 4,
+	tokenMove(IdJaguar,A,B,C,D,E,1,F,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar + 5,
+	tokenMove(IdJaguar,A,B,C,D,E,F,1,G),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
+
+canTokenMove([H|Listawej], IdJaguar, [H|Listawyj]):-
+	IdJaguar2 is IdJaguar + 6,
+	tokenMove(IdJaguar,A,B,C,D,E,F,G,1),
+	isEmpty( IdJaguar2, Listawej ),
+	replace(Listawej, IdJaguar, -1, IdJaguar2, Listawyj).
 
 tokenMove(0,0,0,0,0,1,0,1,1).
 tokenMove(1,0,0,0,1,1,0,1,0).
