@@ -74,6 +74,7 @@ namespace Adugo.ViewModels
             {
                 if (Game.Turn == GameControl.PlayerRound.Jaguar)
                 {
+                    /*
                     if (value.Background == ButtonBackgrounds.Jaguar)
                     {
                         _SelectedItem = value;
@@ -121,12 +122,16 @@ namespace Adugo.ViewModels
                             }
 
                         }
-                    }
+                    }*/
+                    var prologoutput = PrologModel.LoadResponse(":-start(" + ArrayPrologModel.ArrayToPrologList(_ButtonsData) + ",X).");
+                    _ButtonsData = ArrayPrologModel.PrologListToArray(_ButtonsData, prologoutput);
+                    _SelectedItem = null;
+                    Game.NextTurn();
                 }
                 else if (Game.Turn == GameControl.PlayerRound.Doge)
                 {
 
-                    /*
+                    
                     if (value.Background == ButtonBackgrounds.Doge && SelectedItem == null)
                     {
                         _SelectedItem = value;
@@ -150,10 +155,9 @@ namespace Adugo.ViewModels
                             }
                         }
                     }
-                     */
+                     
 
-                    var prologoutput=PrologModel.LoadResponse(":-start("+ArrayPrologModel.ArrayToPrologList(_ButtonsData)+",X).");
-                    _ButtonsData = ArrayPrologModel.PrologListToArray(_ButtonsData,prologoutput);
+                    
                 }
             } 
         }

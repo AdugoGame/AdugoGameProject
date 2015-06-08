@@ -77,7 +77,8 @@ namespace Adugo.Models
                     _ValueForMatrix = value;
                     if (_ValueForMatrix == 0)
                     {
-                        Visibility = ButtonVisibility.Hidden;
+                        Background = null;
+                        Visibility = ButtonVisibility.Visible;
                     }
                     else if (_ValueForMatrix == 1)
                     {
