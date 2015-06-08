@@ -148,7 +148,7 @@ namespace Adugo.ViewModels
                         {
                             if (AbilityToMove.TestAbilityToMove(_SelectedItem, value))
                             {
-                                _SelectedItem.Background = null;
+                                _SelectedItem.ValueForMatrix = 0;
                                 value.ValueForMatrix = 1;
                                 _SelectedItem = null;
                                 Game.NextTurn();
